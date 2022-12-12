@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { IoTrashOutline } from "react-icons/io5";
 import { IconContext } from "react-icons";
 import { useState } from "react";
 import UncheckedBoxIcon from "./icons/UncheckedBoxIcon";
 import CheckedBoxIcon from "./icons/CheckedBoxIcon";
+import DeleteIcon from "./icons/DeleteIcon";
 
 function Task({ text, onDelete }) {
   const [selected, setSelected] = useState(false);
@@ -23,16 +23,7 @@ function Task({ text, onDelete }) {
         {text}
       </CheckAndTextContainer>
       <div onClick={handleDelete} data-testid={`deleteButton_${text}`}>
-        <IconContext.Provider
-          value={{
-            className: "global-class-name",
-            size: "22px",
-          }}
-        >
-          <div>
-            <IoTrashOutline />
-          </div>
-        </IconContext.Provider>
+        <DeleteIcon />
       </div>
     </Wrapper>
   );
